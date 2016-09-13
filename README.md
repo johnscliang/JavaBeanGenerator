@@ -12,7 +12,7 @@ jdbc.username=root
 jdbc.password=123456
 ```
 ### step 2
-run the jar file with command line.
+run the jar file with command line.Without any Exception,the Java Bean files could be found in 'gens' directory. 
 ```
 java -jar generator.jar
 ```
