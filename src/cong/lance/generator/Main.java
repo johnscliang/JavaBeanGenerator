@@ -146,6 +146,11 @@ public class Main {
 		ret.append(" implements Serializable {");
 		ret.append("\n");
 		ret.append("\n");
+		ret.append("	// ");
+		for (int i = 0; i < fieldList.size(); i++) {
+			ret.append((i == 0 ? "":",") + fieldList.get(i).getName());
+		}
+		ret.append("\n");
 		ret.append("    private static final long serialVersionUID = 1L;").append("\n");
 		ret.append("\n");
 		for (FieldBean fieldBean : fieldList) {
