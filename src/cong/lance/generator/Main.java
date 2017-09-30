@@ -28,6 +28,7 @@ public class Main {
 		InputStream in = null;
 		try {
 			prop = new Properties();
+//			in = new BufferedInputStream(new FileInputStream("conf/config4test.properties"));
 			in = new BufferedInputStream(new FileInputStream("conf/config.properties"));
 			prop.load(in);
 			String ret = prop.getProperty(key).trim();
@@ -129,7 +130,7 @@ public class Main {
 
 	public static void genClassFiles(String tablename, List<FieldBean> fieldList) {
 		String extendClass = getPropertity("extend");
-		String className = getPropertity("prefix") + Util.firstLetterUpperCase(tablename) + getPropertity("suffix");
+		String className = Util.toCamelName(getPropertity("prefix") + Util.firstLetterUpperCase(tablename) + getPropertity("suffix"));
 		StringBuilder ret = new StringBuilder();
 		ret.append("package ").append(getPropertity("package")).append(";").append("\n").append("\n");
 		ret.append("import java.io.Serializable;").append("\n");

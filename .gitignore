@@ -2,4 +2,6 @@
 .classpath
 .project
 /.settings/
+/conf/config4test.properties
+
 
