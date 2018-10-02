@@ -104,7 +104,7 @@ public class Main {
 				List<FieldBean> fieldList = new ArrayList<FieldBean>();// 一个表的
 				Statement statement = getConnection().createStatement();
 				ResultSet resultSet = statement.executeQuery("SELECT * from "
-						+ tablename);
+						+ tablename + " LIMIT 1 ");
 				ResultSetMetaData metaData = resultSet.getMetaData();
 				for (int i = 0; i < metaData.getColumnCount(); i++) {
 					// resultSet数据下标从1开始
